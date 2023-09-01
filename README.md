@@ -23,7 +23,9 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
 
 #### Preprocessing stages
 
-The notebook `00_dataset_generation` contains the main codes to (i) process raw traces filtering unwanted data; (ii) generate bipartite graphs from filtered traces and extract node features; (iii) generate textual corpora which will be processed by NLP algorithms.
+The notebook `00_dataset_characterization` contains the main codes to (i) process raw traces filtering unwanted data; (ii) generate bipartite graphs from filtered traces and extract node features; (iii) generate textual corpora which will be processed by NLP algorithms.
+
+The notebook `01_dataset_generation` contains the main codes to (i) process raw traces filtering unwanted data; (ii) generate bipartite graphs from filtered traces and extract node features; (iii) generate textual corpora which will be processed by NLP algorithms.
 
 
 ### Src Folder
