@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from ..utils import _sparse_mx_to_torch_sparse_tensor, _normalize
-from tqdm import tqdm
+from tqdm.notebook import tqdm_notebook as tqdm
 from scipy.sparse import coo_matrix
 
 # =============================================================================
@@ -149,7 +149,7 @@ def uniform_features(df, lookup, node_type):
 def generate_adjacency_matrices(flist, weighted=True):
     traces = []
     edges = []
-    for fname in tqdm(flist):
+    for fname in tqdm(flist, desc='Loading graphs'):
         data = pd.read_csv(fname, header=None, 
                            names=["src", "dst", "weight", "label"])
         if not weighted:
@@ -185,7 +185,7 @@ def generate_adjacency_matrices(flist, weighted=True):
         for edge in edges]
     
     adjs = []
-    for i in tqdm(range(len(edges))):
+    for i in tqdm(range(len(edges)), desc='Generating matrices'):
         adjs.append(
             _sparse_mx_to_torch_sparse_tensor(
                 _normalize(
