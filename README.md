@@ -1,6 +1,6 @@
-# The Benefit of GNNs for Network Traffic Analysis
+# Exploring Temporal GNN Embeddings for Darknet Traffic Analysis
 
-This repo contains the source codes for the paper "The Benefit of GNNs for Network Traffic Analysis" published at TBD.
+This repo contains the source codes for the paper "The Benefit of GNNs for Network Traffic Analysis" submittet to the 2nd International Workshop on Graph Neural Networking (GNNet@CoNEXT’23).
 
 ## Table of Contents
 
@@ -20,6 +20,11 @@ The repository is organized as follows:
 ### Notebook Folder
 
 The `notebook` folder contains Jupyter notebooks that demonstrate how to reproduce the experiments described in the paper. Each notebook corresponds to a specific experiment and provides step-by-step instructions and explanations. The notebooks are designed to be self-contained and easy to follow.
+
+#### Preprocessing stages
+
+The notebook `00_dataset_generation` contains the main codes to (i) process raw traces filtering unwanted data; (ii) generate bipartite graphs from filtered traces and extract node features; (iii) generate textual corpora which will be processed by NLP algorithms.
+
 
 ### Src Folder
 
