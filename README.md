@@ -25,7 +25,7 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
 
 - The notebook `01_dataset_generation` contains the main codes to (i) process raw traces filtering unwanted data; (ii) generate bipartite graphs from filtered traces and extract node features; (iii) generate textual corpora which will be processed by NLP algorithms.
 
-- The notebook `02_embeddings_generation` contains the main codes to (i) prduce NLP embeddings through i-DarkVec; (ii) prduce (t)GNN embeddings without node features; (iii) prduce (t)GNN embeddings with node features.
+- The notebook `02_embeddings_generation` contains the main codes to (i) prduce NLP embeddings through i-DarkVec; (ii) prduce (t)GNN embeddings without node features; (iii) prduce (t)GNN embeddings with node features; (iv) produce embeddings to evaluate the impact of the parameters (history and training epochs).
 
 ### Src Folder
 
