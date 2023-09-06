@@ -1,1 +1,1 @@
-# `src.modesl.classification.KnnClassifier`
+# `src.models.classification.KnnClassifier`

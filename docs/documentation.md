@@ -5,15 +5,18 @@ This is the class and function reference of library used in this repo.
 ### [`src.models.classification`](classification.md): Classifiers
 Class implementing the k-Nearest-Neighbors classifier
 
-- [`src.modesl.classification.KnnClassifier`](classification.md): description
+- [`src.models.classification.KnnClassifier`](classification.md): description
 
 ___
 
 ### [`src.models.gnn`](gnn.md): GNN embeddings
 
-- `src.models.gnn.GCN`: description
-- `src.models.gnn.GCN_GRU`: description
-- `src.models.gnn.IncrementalGcnGru`: description
+- [`src.models.gnn.GCN`](gnn.md#srcmodelsgnngcn): description
+- [`src.models.gnn.GCN_GRU`](gnn.md#srcmodelsgnngcn_gru): description
+- [`src.models.gnn.IncrementalGcnGru`](gnn.md#srcmodelsgnnincrementalgcngru): description
+
+___
+
 
 ### [`src.models.nlp`](nlp.md): NLP embeddings
 
