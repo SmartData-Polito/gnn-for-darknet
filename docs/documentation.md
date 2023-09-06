@@ -20,7 +20,10 @@ ___
 
 ### [`src.models.nlp`](nlp.md): NLP embeddings
 
-- `src.models.nlp.iWord2Vec`: description
+- [`src.models.nlp.iWord2Vec`](nlp.md): description
+
+___
+
 
 ### [`src.preprocessing`]: Preprocessing Functions
 
@@ -42,4 +45,7 @@ ___
 - `src.preprocessing.preprocessing.generate_negatives`
 - `src.preprocessing.preprocessing.get_self_supervised_edges`
 
-### [`src.utils`]: Utilities
+___
+
+
+### [`src.utils`]: Utility Functions

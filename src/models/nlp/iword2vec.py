@@ -6,25 +6,31 @@ import pandas as pd
 import numpy as np
 
 class iWord2Vec():
-    """_summary_
-
-    Parameters
-    ----------
-    c : int, optional
-        _description_, by default 5
-    e : int, optional
-        _description_, by default 64
-    epochs : int, optional
-        _description_, by default 1
-    source : _type_, optional
-        _description_, by default None
-    destination : _type_, optional
-        _description_, by default None
-    seed : int, optional
-        _description_, by default 15
-    """
     def __init__(self, c=5, e=64, epochs=1, source=None, destination=None, 
                                                                       seed=15):
+        """ Initialize an instance of iWord2Vec.
+
+        Parameters:
+        -----------
+        c : int, optional (default=5)
+            The size of the context window.
+
+        e : int, optional (default=64)
+            The size of the word embeddings.
+
+        epochs : int, optional (default=1)
+            The number of training epochs.
+
+        source : str or None, optional (default=None)
+            The source file to load a pre-trained model from.
+
+        destination : str or None, optional (default=None)
+            The destination file to save the trained model.
+
+        seed : int, optional (default=15)
+            The random seed for reproducibility.
+
+        """
         self.context_window = c
         self.embedding_size = e
         self.epochs = epochs
@@ -39,14 +45,17 @@ class iWord2Vec():
             self.load_model()            
                 
     def train(self, corpus, save=False):
-        """_summary_
+        """
+        Train the iWord2Vec model on the given corpus.
 
-        Parameters
-        ----------
-        corpus : _type_
-            _description_
-        save : bool, optional
-            _description_, by default False
+        Parameters:
+        -----------
+        corpus : list of list of str
+            A list of sentences where each sentence is a list of words.
+
+        save : bool, optional (default=False)
+            Whether to save the trained model.
+
         """
         self.model = Word2Vec(sentences=corpus, vector_size=self.embedding_size, 
                               window=self.context_window, epochs=self.epochs, 
@@ -56,25 +65,28 @@ class iWord2Vec():
             self.model.save(f'{self.destination}.model')
 
     def load_model(self):
-        """_summary_
+        """ Load a pre-trained iWord2Vec model from a file.
+
         """
         self.model = Word2Vec.load(f'{self.source}.model')
 
 
     def get_embeddings(self, ips=None, emb_path=None):
-        """_summary_
+        """ Get word embeddings for specific words or all words.
 
-        Parameters
-        ----------
-        ips : _type_, optional
-            _description_, by default None
-        emb_path : _type_, optional
-            _description_, by default None
+        Parameters:
+        -----------
+        ips : list of str or None, optional (default=None)
+            A list of words to retrieve embeddings for. If None, retrieves embeddings for all words.
 
-        Returns
-        -------
-        _type_
-            _description_
+        emb_path : str or None, optional (default=None)
+            The file path to save the embeddings as a CSV file.
+
+        Returns:
+        --------
+        pd.DataFrame
+            A DataFrame containing word embeddings.
+
         """
         if type(ips)==type(None):
             ips = [x for x in self.model.wv.index_to_key]
@@ -88,14 +100,16 @@ class iWord2Vec():
     
 
     def update(self, corpus, save=False):
-        """_summary_
+        """ Update the iWord2Vec model with additional training on a new corpus.
 
-        Parameters
-        ----------
-        corpus : _type_
-            _description_
-        save : bool, optional
-            _description_, by default False
+        Parameters:
+        -----------
+        corpus : list of list of str
+            A list of sentences where each sentence is a list of words.
+
+        save : bool, optional (default=False)
+            Whether to save the updated model.
+
         """
         self.model.build_vocab(corpus, update=True, trim_rule=None)
         self.model.train(corpus, total_examples=self.model.corpus_count, 
@@ -104,14 +118,16 @@ class iWord2Vec():
             self.model.save(f'{self.destination}.model')
 
     def del_embeddings(self, to_drop, mname=None):
-        """_summary_
+        """ Delete word embeddings for specific words.
 
-        Parameters
-        ----------
-        to_drop : _type_
-            _description_
-        mname : _type_, optional
-            _description_, by default None
+        Parameters:
+        -----------
+        to_drop : list of str
+            A list of words to delete from the embeddings.
+
+        mname : str or None, optional (default=None)
+            The destination file to save the model after removing embeddings.
+
         """
         idx = np.isin(self.model.wv.index_to_key, to_drop)
         idx = np.where(idx==True)[0]
