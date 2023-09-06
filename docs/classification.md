@@ -39,12 +39,12 @@ This method fits the scaler on the training data and then scales both
 #### Parameters
 - **X_train** : _array-like_
 
-The training data to be scaled.
+    The training data to be scaled.
 
 - **X_val** : _array-like or None, optional (default=None)_
 
-The validation data to be scaled. If None, no scaling is applied to 
-validation data.
+    The validation data to be scaled. If None, no scaling is applied to 
+    validation data.
 
 #### Returns
 - **X_train_scaled** : _array-like_
