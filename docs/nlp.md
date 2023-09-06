@@ -1,10 +1,9 @@
 # `src.models.nlp.iWord2Vec`
 
-# `src.models.classification.KnnClassifier`
-
 ```python
 class iWord2Vec(c=5, e=64, epochs=1, source=None, destination=None, seed=15)
 ```
+[source](../src/models/nlp/iword2vec.py)
 
 This class implements a iWord2Vec model.
 
