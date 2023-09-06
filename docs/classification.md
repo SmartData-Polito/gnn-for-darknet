@@ -81,7 +81,7 @@ Whether to scale the input data before training the classifier.
 
 Whether to save the trained model and scaler to files.
 
-
+___
 ```python
 _majority_voting(neigh_idxs)
 ```
@@ -99,7 +99,7 @@ Indices of neighbors in the training data.
 
 Predicted labels based on majority voting.
 
-
+___
 ```python
 predict(X, scale_data=True, loo=False)
 ```
@@ -127,7 +127,7 @@ a numpy array with indices for Leave-One-Out validation.
 
 Predicted labels for the input samples.
 
-
+___
 ```python
 predict_proba(X)
 ```
