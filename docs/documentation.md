@@ -33,7 +33,7 @@ Class implementing i-DarkVec to generate embeddings in a self-supervised way.
 ___
 
 
-### [`src.preprocessing`]: Preprocessing Functions
+### [`src.preprocessing`](preprocessing.md): Preprocessing Functions
 Preprocessing functions used to generate GNN embeddings
 
 - `src.preprocessing.gnn.extract_single_snapshot`: Extract and format a single snapshot from a DataFrame for a given day.
@@ -64,4 +64,12 @@ Generic preprocessing functions
 ___
 
 
-### [`src.utils`]: Utility Functions
+### [`src.utils`](utils.md): Utility Functions
+Generic utility functions
+
+- `src.utils._normalize`: Row-normalize a sparse matrix.
+- `src.utils._sparse_mx_to_torch_sparse_tensor`: Convert a scipy sparse matrix to a torch sparse tensor.
+- `src.utils.get_set_diff`: Compute the set difference between two arrays A and B.
+- `src.utils.compute_accuracy`: Compute accuracy between true and predicted labels.
+- `src.utils.get_diagonal_features`: Get a sparse diagonal feature matrix.
+- `src.utils.initalize_output_folder`: Initialize an output folder for experiment results.
