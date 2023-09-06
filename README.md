@@ -3,18 +3,61 @@
 This repo contains the source codes for the paper "The Benefit of GNNs for Network Traffic Analysis" submittet to the 2nd International Workshop on Graph Neural Networking (GNNet@CoNEXT’23).
 
 ## Table of Contents
-
+- [How to reproduce results in the paper?](#how-to-reproduce-results-in-the-paper)
 - [Repository Structure](#repository-structure)
-    - [Notebook Folder](#notebook-folder)
-    - [Src Folder](#library-folder)
-- [Installation](#installation)
+- [Notebook Folder](#notebook-folder)
+- [Data Structure](#data-structure)
+- [Documentation]
+
+
+## How to reproduce results in the paper?
+Note: This guide assumes a Debian-like system (tested on Ubuntu 20.04 & Debian 11).
+
+1. Clone this repository
+2. Download the gzip data file from: https://TBD
+3. Unzip the TBD file into a subfolder of this repository called `data`
+
+```bash
+tar -zxvf coNEXT.tar.gz
+```
+
+4. Install the `virtualenv` library (python3 is assumed):
+
+```bash
+pip3 install --user virtualenv
+```
+
+5. Create a new virtual environment and activate it:
+
+```bash
+virtualenv darknet-gnn-env
+source darknet-gnn-env/bin/activate
+```
+
+6. Install the required libraries (python3 is assumed):
+
+```bash
+pip3 install -r requirements.txt
+```
+
+7. Run the notebooks described next. For example, to run the first notebook:
+
+```bash
+jupyter-lab 00-dataset-characterization.ipynb
+```
+
+8. When the notebook exploration is ended, remember to deactivate the virtual environment:
+
+```bash
+deactivate
+```
 
 ## Repository Structure
 
 The repository is organized as follows:
 
 - The `notebook` folder contains Jupyter notebooks that replicate the experiments presented in the paper.
-- The `src` folder includes the Python library that provides functions, methods, classes, and models used in the notebooks.
+- The `src` folder contains all the source codes and libraries providing the necessary tools for implementing and reproducing the experiments of the paper. This library encapsulates the functions, methods, classes, and models used in the notebooks. By utilizing this library, users can streamline their workflow and easily experiment with different components.
 - The `requirements.txt` file lists the required Python packages and their versions.
 
 ### Notebook Folder
@@ -27,18 +70,23 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
 
 - The notebook `02_embeddings_generation` contains the main codes to (i) prduce NLP embeddings through i-DarkVec; (ii) prduce (t)GNN embeddings without node features; (iii) prduce (t)GNN embeddings with node features; (iv) produce embeddings to evaluate the impact of the parameters (history and training epochs).
 
-### Src Folder
+- The notebook `03_classification` contains the main codes to run the final k-Nearest-Neighbors classification pipeline. The main experiments are: (i) Main table with classification performance; (ii) impact of History parameter -- temporal aspect of tGNN; (iii) Impact of training epochs for incremental training.
 
-The `src` folder houses a Python library that provides the necessary tools for implementing and reproducing the experiments. This library encapsulates the functions, methods, classes, and models used in the notebooks. By utilizing this library, users can streamline their workflow and easily experiment with different components.
+## Data Structure
 
-## Installation
 
-To set up the required environment, you can use the provided `requirements.txt` file. Run the following command to install the necessary dependencies using pip:
+## Documentation
 
-```bash
-pip3 install -r requirements.txt
-```
+
+
+
+
 
 Feel free to explore the notebooks, experiment with the library, and adapt the code to your own research or applications.
-
 For any questions, issues, or suggestions, please open an issue on this repository.
+
+# ToDo
+- [] src docstrings
+- [] documentation section in README
+- [] description of data folder
+- [] requirements
