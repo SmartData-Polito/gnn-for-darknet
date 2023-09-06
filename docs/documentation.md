@@ -1,5 +1,4 @@
-# Exploring Temporal GNN Embeddings for Darknet Traffic Analysis
-## API Reference
+# API Reference
 This is the class and function reference of library used in this repo. 
 
 ### [`src.models.classification`](classification.md): Classifiers

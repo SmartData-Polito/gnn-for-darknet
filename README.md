@@ -86,7 +86,6 @@ Feel free to explore the notebooks, experiment with the library, and adapt the c
 For any questions, issues, or suggestions, please open an issue on this repository.
 
 # ToDo
-- [] src docstrings
 - [] documentation section in README
 - [] description of data folder
 - [] requirements
