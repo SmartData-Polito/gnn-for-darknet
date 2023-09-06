@@ -5,6 +5,7 @@ class GCN(n_nodes=1000, ns=1, input_size=None, gcn_layers=2, gcn_units=1024,
           gcn_output_size=256, embedding_size=128, predictor_units=64, 
           dropout=.01, lr=1e-3, epochs=3, cuda=False)
 ```
+[source](../src/models/gnn/gcn.py)
 
 This class implements the GCN (Graph Convolutional Network) model 
 with the specified hyperparameters.
@@ -160,6 +161,7 @@ class GCN_GRU(n_nodes=1000, history=10, ns=1, input_size=None, gcn_layers=2,
               predictor_units=64, dropout=.01, lr=1e-3, early_stop=None, 
               best_train_acc=False, cuda=False)
 ```
+[source](../src/models/gnn/gcngru.py)
 
 This class implements the GCN-GRU model with the specified hyperparameters.
 It sets up the model, optimizer, and manages CUDA if available and specified.
@@ -318,6 +320,7 @@ class GCN_GRU(n_nodes=1000, history=10, ns=1, input_size=None, gcn_layers=2,
               gcn_units=1024, gcn_output_size=512, embedding_size=128,
               predictor_units=64, dropout=.01, lr=1e-3, epochs=3, cuda=False)
 ```
+[source](../src/models/gnn/igcngru.py)
 
 This class implements the Incremental GCN-GRU model with the specified
 hyperparameters. It sets up the model, optimizer, and manages CUDA if available

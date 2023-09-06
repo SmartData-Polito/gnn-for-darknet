@@ -3,6 +3,7 @@
 ```python
 class KnnClassifier(n_neighbors=7, model_path=None, metric='cosine', _load_model=False)
 ```
+[source](../src/models/classification/knn_classifier.py)
 
 This class defines the KNN Classifier with specified hyperparameters 
         and creates a StandardScaler for data standardization. If `_load_model` 
