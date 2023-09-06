@@ -61,6 +61,7 @@ The repository is organized as follows:
 
 - The `notebook` folder contains Jupyter notebooks that replicate the experiments presented in the paper.
 - The `src` folder contains all the source codes and libraries providing the necessary tools for implementing and reproducing the experiments of the paper. This library encapsulates the functions, methods, classes, and models used in the notebooks. By utilizing this library, users can streamline their workflow and easily experiment with different components.
+- The `docs` folder contains the codes documentation.
 - The `requirements.txt` file lists the required Python packages and their versions.
 
 ### Notebook Folder
@@ -82,8 +83,7 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
 
 Please, refer to the [API reference](docs/documentation.md) for the complete code documentation.
 
-
-# ToDo
+## ToDo
 - Description of data folder
 - Add GCN (early stop)
 - Upload data
