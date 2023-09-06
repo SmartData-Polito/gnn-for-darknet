@@ -5,7 +5,9 @@ This is the class and function reference of library used in this repo.
 ### [`src.models.classification`](classification.md): Classifiers
 Class implementing the k-Nearest-Neighbors classifier
 
-- [`src.models.classification.KnnClassifier`](classification.md): description
+- [`src.models.classification.KnnClassifier`](classification.md): This class defines the KNN Classifier with specified hyperparameters 
+and creates a StandardScaler for data standardization. If `_load_model` 
+        is True, it loads a pre-trained model and scaler from the specified path.
 
 ___
 
