@@ -7,6 +7,8 @@ Class implementing the k-Nearest-Neighbors classifier
 
 - [`src.modesl.classification.KnnClassifier`](classification.md): description
 
+___
+
 ### [`src.models.gnn`](gnn.md): GNN embeddings
 
 - `src.models.gnn.GCN`: description
