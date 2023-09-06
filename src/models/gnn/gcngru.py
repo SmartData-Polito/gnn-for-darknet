@@ -14,8 +14,7 @@ class GCN_GRU():
                  gcn_layers=2, gcn_units=1024, gcn_output_size=512, 
                  embedding_size=128, predictor_units=64, dropout=.01, lr=1e-3, 
                  early_stop=None, best_train_acc=False, cuda=False):  
-        """
-        This class implements the GCN-GRU model with the specified hyperparameters.
+        """ This class implements the GCN-GRU model with the specified hyperparameters.
         It sets up the model, optimizer, and manages CUDA if available and specified.
 
         Parameters:

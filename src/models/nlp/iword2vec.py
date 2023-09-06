@@ -8,7 +8,7 @@ import numpy as np
 class iWord2Vec():
     def __init__(self, c=5, e=64, epochs=1, source=None, destination=None, 
                                                                       seed=15):
-        """ Initialize an instance of iWord2Vec.
+        """ This class implements a iWord2Vec model.
 
         Parameters:
         -----------
