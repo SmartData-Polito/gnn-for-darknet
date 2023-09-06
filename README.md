@@ -2,6 +2,9 @@
 
 This repo contains the source codes for the paper "The Benefit of GNNs for Network Traffic Analysis" submitted to the 2nd International Workshop on Graph Neural Networking (GNNet@CoNEXT’23).
 
+Feel free to explore the notebooks, experiment with the library, and adapt the code to your own research or applications.
+For any questions, issues, or suggestions, please open an issue on this repository.
+
 ## Table of Contents
 - [How to reproduce results in the paper?](#how-to-reproduce-results-in-the-paper)
 - [Repository Structure](#repository-structure)
@@ -80,13 +83,7 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
 Please, refer to the [API reference](docs/documentation.md) for the complete code documentation.
 
 
-
-
-
-Feel free to explore the notebooks, experiment with the library, and adapt the code to your own research or applications.
-For any questions, issues, or suggestions, please open an issue on this repository.
-
 # ToDo
-- [] description of data folder
-- [] add GCN in notebook
-- [] add visualization
+- Description of data folder
+- Add GCN (early stop)
+- Upload data
