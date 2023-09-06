@@ -1,13 +1,13 @@
 # Exploring Temporal GNN Embeddings for Darknet Traffic Analysis
 
-This repo contains the source codes for the paper "The Benefit of GNNs for Network Traffic Analysis" submittet to the 2nd International Workshop on Graph Neural Networking (GNNet@CoNEXT’23).
+This repo contains the source codes for the paper "The Benefit of GNNs for Network Traffic Analysis" submitted to the 2nd International Workshop on Graph Neural Networking (GNNet@CoNEXT’23).
 
 ## Table of Contents
 - [How to reproduce results in the paper?](#how-to-reproduce-results-in-the-paper)
 - [Repository Structure](#repository-structure)
 - [Notebook Folder](#notebook-folder)
 - [Data Structure](#data-structure)
-- [Documentation]
+- [API Reference](#api-reference)
 
 
 ## How to reproduce results in the paper?
@@ -18,7 +18,7 @@ Note: This guide assumes a Debian-like system (tested on Ubuntu 20.04 & Debian 1
 3. Unzip the TBD file into a subfolder of this repository called `data`
 
 ```bash
-tar -zxvf coNEXT.tar.gz
+tar -zxvf TBD.tar.gz
 ```
 
 4. Install the `virtualenv` library (python3 is assumed):
@@ -64,19 +64,20 @@ The repository is organized as follows:
 
 The `notebook` folder contains Jupyter notebooks that demonstrate how to reproduce the experiments described in the paper. Each notebook corresponds to a specific experiment and provides step-by-step instructions and explanations. The notebooks are designed to be self-contained and easy to follow.
 
-- The notebook `00_dataset_characterization` contains the main codes to characterized both the filtered dataset (total and on daily basis) and the resulting temporal graph.
+- The notebook [`00_dataset_characterization`](notebooks/00_dataset_characterization.ipynb) contains the main codes to characterized both the filtered dataset (total and on daily basis) and the resulting temporal graph.
 
-- The notebook `01_dataset_generation` contains the main codes to (i) process raw traces filtering unwanted data; (ii) generate bipartite graphs from filtered traces and extract node features; (iii) generate textual corpora which will be processed by NLP algorithms.
+- The notebook [`01_dataset_generation`](notebooks/01_dataset_generation.ipynb) contains the main codes to (i) process raw traces filtering unwanted data; (ii) generate bipartite graphs from filtered traces and extract node features; (iii) generate textual corpora which will be processed by NLP algorithms.
 
-- The notebook `02_embeddings_generation` contains the main codes to (i) prduce NLP embeddings through i-DarkVec; (ii) prduce (t)GNN embeddings without node features; (iii) prduce (t)GNN embeddings with node features; (iv) produce embeddings to evaluate the impact of the parameters (history and training epochs).
+- The notebook [`02_embeddings_generation`](notebooks/02_embeddings_generation.ipynb) contains the main codes to (i) prduce NLP embeddings through i-DarkVec; (ii) prduce (t)GNN embeddings without node features; (iii) prduce (t)GNN embeddings with node features; (iv) produce embeddings to evaluate the impact of the parameters (history and training epochs).
 
-- The notebook `03_classification` contains the main codes to run the final k-Nearest-Neighbors classification pipeline. The main experiments are: (i) Main table with classification performance; (ii) impact of History parameter -- temporal aspect of tGNN; (iii) Impact of training epochs for incremental training.
+- The notebook [`03_classification`](notebooks/03_classification.ipynb) contains the main codes to run the final k-Nearest-Neighbors classification pipeline. The main experiments are: (i) Main table with classification performance; (ii) impact of History parameter -- temporal aspect of tGNN; (iii) Impact of training epochs for incremental training.
 
 ## Data Structure
 
 
-## Documentation
+## API Reference
 
+Please, refer to the [API reference](docs/documentation.md) for the complete code documentation.
 
 
 
@@ -86,6 +87,6 @@ Feel free to explore the notebooks, experiment with the library, and adapt the c
 For any questions, issues, or suggestions, please open an issue on this repository.
 
 # ToDo
-- [] documentation section in README
 - [] description of data folder
-- [] requirements
+- [] add GCN in notebook
+- [] add visualization

@@ -1,0 +1,7 @@
+fastplot
+pytorch
+pandas
+numpy
+scipy
+matplotlib
+gensim
