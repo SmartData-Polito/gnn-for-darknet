@@ -55,7 +55,7 @@ Scaled training data.
 
 Scaled validation data if provided; None if X_val is None.
 
-
+___
 ```python
 fit(X, y, scale_data=True, save=False):
 ```
