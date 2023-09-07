@@ -22,7 +22,7 @@ To download the data a password is required via mail to [luca.gioacchini@polito.
 3. Unzip the TBD file into a subfolder of this repository called `data`
 
 ```bash
-tar -xzf gnn-for-darknet-data.tar.gz -C data
+mkdir -p data && tar -xzf gnn-for-darknet-data.tar.gz -C data --strip-components=1
 
 ```
 
