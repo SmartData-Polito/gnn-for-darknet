@@ -98,6 +98,3 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
 ## API Reference
 
 Please, refer to the [API reference](docs/documentation.md) for the complete code documentation.
-
-## ToDo
-- Upload data
