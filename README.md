@@ -17,11 +17,13 @@ For any questions, issues, or suggestions, please open an issue on this reposito
 Note: This guide assumes a Debian-like system (tested on Ubuntu 20.04 & Debian 11).
 
 1. Clone this repository
-2. Download the gzip data file from: https://TBD
+2. Download the gzip data file from: https://mplanestore.polito.it:5001/sharing/1LhiKV1ko 
+To download the data a password is required via mail to [luca.gioacchini@polito.it](mailto:luca.gioacchini@polito.it).
 3. Unzip the TBD file into a subfolder of this repository called `data`
 
 ```bash
-tar -zxvf TBD.tar.gz
+tar -xzf gnn-for-darknet-data.tar.gz -C data
+
 ```
 
 4. Install the `virtualenv` library (python3 is assumed):
