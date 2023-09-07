@@ -18,7 +18,7 @@ Note: This guide assumes a Debian-like system (tested on Ubuntu 20.04 & Debian 1
 
 1. Clone this repository
 2. Download the gzip data file from: https://mplanestore.polito.it:5001/sharing/1LhiKV1ko 
-To download the data a password is required via mail to [luca.gioacchini@polito.it](mailto:luca.gioacchini@polito.it).
+To download the data a password is required via mail to [luca.gioacchini@polito.it](mailto:luca.gioacchini@polito.it). Please refer to the [data section](#data-structure) for an overview of the data structure.
 3. Unzip the TBD file into a subfolder of this repository called `data`
 
 ```bash
@@ -79,6 +79,7 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
 - The notebook [`03_classification`](notebooks/03_classification.ipynb) contains the main codes to run the final k-Nearest-Neighbors classification pipeline. The main experiments are: (i) Main table with classification performance; (ii) impact of History parameter -- temporal aspect of tGNN; (iii) Impact of training epochs for incremental training.
 
 ## Data Structure
+The downloaded `data` folder is organized as follow:
 
 - `corpus` folder contains the NLP corpora. Each pickle file is contains a list of numpy arrays (sequence of strings) of a snapshot named as `corpus_DATE.pkl`, where `DATE` is referred to the considered snapshot. 
 - `features` folder contains the node features. Each csv file has _V_ rows, where _V_ is the number of vertices of the graph and _F_ columns, where _F_ is the number of features for each node. Each file is named `features_DATE.csv`, where `DATE` is referred to the considered snapshot.
