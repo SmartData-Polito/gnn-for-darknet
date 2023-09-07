@@ -6,12 +6,14 @@ from ...utils.utils import (compute_accuracy,
                             get_diagonal_features)
 from ...preprocessing.preprocessing import get_self_supervised_edges
 from .modules._single_gcn import SingleGCN
+from copy import deepcopy
+
 
 class GCN():
     def __init__(self, n_nodes=1000, ns=1, input_size=None, 
                  gcn_layers=2, gcn_units=1024, gcn_output_size=256, 
                  embedding_size=128, predictor_units=64, dropout=.01, 
-                 lr=1e-3, epochs=3, cuda=False):  
+                 lr=1e-3, epochs=3, cuda=False, early_stop=None):  
         """ This class implements the GCN (Graph Convolutional Network) model 
         with the specified hyperparameters.
 
@@ -50,13 +52,18 @@ class GCN():
         epochs : int, optional (default=3)
             Number of training epochs.
 
+        early_stop : int or None, optional (default=None)
+            Number of epochs with no improvement to trigger early stopping. 
+            If None, early stopping is not used.
+
         cuda : bool, optional (default=False)
             Whether to use CUDA for GPU acceleration.
 
         """
         # General parameters initializations
         self.n, self.ns, self.cuda, self.epochs = n_nodes, ns, cuda, epochs
-        
+        self.early_stop = early_stop
+
         # Initialize the GCN-GRU model
         self.model = SingleGCN(
             n_nodes = n_nodes, 
@@ -209,6 +216,9 @@ class GCN():
         # Set feature matrix to identity 
         if type(features)==type(None):
             features = get_diagonal_features(self.n)
+
+        # Early stop initialization
+        best_train_acc, best_model, no_improvement = 0.0, None, 0
         
         for epoch in range(self.epochs):
             # General init at the beginning of each epoch
@@ -229,12 +239,27 @@ class GCN():
             )
 
             # Run single training step
-            self._train_single_step_edges(training_batch, X_neg)     
+            _, train_acc = self._train_single_step_edges(training_batch, X_neg)     
             
             # Update progress bar
             if type(pbar) != type(None):
                 pbar.set_description(f"Day {day} - Epoch {epoch}")
                 pbar.update(1)
+
+            # Take best performing model
+            if train_acc > best_train_acc: 
+                best_train_acc = train_acc
+                best_model = deepcopy(self.model)
+                no_improvement = 0
+            else:
+                no_improvement += 1
+
+            if type(self.early_stop)!=type(None):
+                if no_improvement>=self.early_stop:
+                    print('Early stop condition met')
+                    break
+
+        self.model = deepcopy(best_model)
 
         if save:
             # Save best model and best results for validation results

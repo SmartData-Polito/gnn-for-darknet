@@ -3,7 +3,7 @@
 ```python
 class GCN(n_nodes=1000, ns=1, input_size=None, gcn_layers=2, gcn_units=1024,  
           gcn_output_size=256, embedding_size=128, predictor_units=64, 
-          dropout=.01, lr=1e-3, epochs=3, cuda=False)
+          dropout=.01, lr=1e-3, epochs=3, early_stop=None, cuda=False)
 ```
 [source](../src/models/gnn/gcn.py)
 
@@ -55,6 +55,11 @@ with the specified hyperparameters.
 - **epochs** : _int, optional (default=3)_
 
     Number of training epochs.
+
+- **early_stop** : _int or None, optional (default=None)_
+
+    Number of epochs with no improvement to trigger early stopping. If None,
+    early stopping is not used.
 
 - **cuda** : _bool, optional (default=False)_
 
@@ -316,9 +321,10 @@ history in the specified directory.
 # `src.models.gnn.IncrementalGcnGru`
 
 ```python
-class GCN_GRU(n_nodes=1000, history=10, ns=1, input_size=None, gcn_layers=2,        
-              gcn_units=1024, gcn_output_size=512, embedding_size=128,
-              predictor_units=64, dropout=.01, lr=1e-3, epochs=3, cuda=False)
+class IncrementalGcnGru(n_nodes=1000, history=10, ns=1, input_size=None, 
+              gcn_layers=2, gcn_units=1024, gcn_output_size=512, 
+              embedding_size=128, predictor_units=64, dropout=.01, lr=1e-3, 
+              epochs=3, cuda=False)
 ```
 [source](../src/models/gnn/igcngru.py)
 
