@@ -87,6 +87,7 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
     - The files containing embeddings generated with node features are named `embeddings_MODEL_features_DATE.csv`, where `DATE` is referred to the considered snapshot and `MODEL` is referred to the used GNN.
     - The files containing embeddings generated for the history evaluation are named `embeddings_MODEL_features_Hhist_DATE.csv`, where `DATE` is referred to the considered snapshot, `MODEL` is referred to the used GNN and `hist` is the value of the history parameter.
     - The files containing embeddings generated for the training evaluation are named `embeddings_MODEL_features_eeEPOCHS_DATE.csv`, where `DATE` is referred to the considered snapshot, `MODEL` is referred to the used GNN and `EPOCHS` is the value of the training epochs.
+    
 The possible values of `MODEL` are `gcn`, `gcngru`, `igcn`, `igcngru`. 
 Each file is indexed by the src_ip active in the considered snapshot and hse _E_ columns, where _E_ is the embeddings size.
 - `nlp_embeddings` folder contains the csv of the embeddings generated through i-DarkVec. Each file is named `embeddings_idarkvec_DATE.csv`, where `DATE` is referred to the considered snapshot. Each file is indexed by the src_ip active in the considered snapshot and hse _E_ columns, where _E_ is the embeddings size.
