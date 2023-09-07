@@ -78,12 +78,26 @@ The `notebook` folder contains Jupyter notebooks that demonstrate how to reprodu
 
 ## Data Structure
 
+- `corpus` folder contains the NLP corpora. Each pickle file is contains a list of numpy arrays (sequence of strings) of a snapshot named as `corpus_DATE.pkl`, where `DATE` is referred to the considered snapshot. 
+- `features` folder contains the node features. Each csv file has _V_ rows, where _V_ is the number of vertices of the graph and _F_ columns, where _F_ is the number of features for each node. Each file is named `features_DATE.csv`, where `DATE` is referred to the considered snapshot.
+- `graph` folder contains the graph obtained for each snapshot. Each txt file contains 4 columns (_source node_, _destination node_, _edge weight_, _label_).  Each file is named `DATE.txt`, where `DATE` is referred to the considered snapshot.
+- `ground_truth` folder contains the full ground truth. The file `ground_truth.csv` has two columns (_src_ip_, _label_). The first column contains source IP addresses, the second column is the ground truth label.
+- `gnn_embeddings` folder contains the csv of the embeddings generated through GNNs. 
+    - The files containing embeddings generated without node features are named `embeddings_MODEL_DATE.csv`, where `DATE` is referred to the considered snapshot and `MODEL` is referred to the used GNN.
+    - The files containing embeddings generated with node features are named `embeddings_MODEL_features_DATE.csv`, where `DATE` is referred to the considered snapshot and `MODEL` is referred to the used GNN.
+    - The files containing embeddings generated for the history evaluation are named `embeddings_MODEL_features_Hhist_DATE.csv`, where `DATE` is referred to the considered snapshot, `MODEL` is referred to the used GNN and `hist` is the value of the history parameter.
+    - The files containing embeddings generated for the training evaluation are named `embeddings_MODEL_features_eeEPOCHS_DATE.csv`, where `DATE` is referred to the considered snapshot, `MODEL` is referred to the used GNN and `EPOCHS` is the value of the training epochs.
+The possible values of `MODEL` are `gcn`, `gcngru`, `igcn`, `igcngru`. 
+Each file is indexed by the src_ip active in the considered snapshot and hse _E_ columns, where _E_ is the embeddings size.
+- `nlp_embeddings` folder contains the csv of the embeddings generated through i-DarkVec. Each file is named `embeddings_idarkvec_DATE.csv`, where `DATE` is referred to the considered snapshot. Each file is indexed by the src_ip active in the considered snapshot and hse _E_ columns, where _E_ is the embeddings size.
+- `raw` folder contains the raw data pre-processed with the codes reported in `01_dataset_generation`. Each csv file contains the following columns (ts, ethtype, src_ip, src_port, dst_ip, dst_port, pck_len, tcp_flags, mirai, tcp_seq, ttl, t_mss, t_win, t_ts, t_sack, t_sackp, interval). Each file is named `raw_DATE.csv`, where `DATE` is referred to the considered snapshot.
+- `traces` folder contains the pure raw traces. Each file is named `trace_YYMMDD_HH_MM_SS_MS.log.gz` and each row is referred to a packet received by the darknet.
+- `results` folder contains the final results to be plotted.
 
 ## API Reference
 
 Please, refer to the [API reference](docs/documentation.md) for the complete code documentation.
 
 ## ToDo
-- Description of data folder
 - Add GCN (early stop)
 - Upload data
